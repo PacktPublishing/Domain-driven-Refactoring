@@ -19,9 +19,9 @@ public class BrewUpMediator(ISalesFacade salesFacade, IWarehousesFacade warehous
 
 		// Prepare the list of rows that are available for sale
 		List<SalesOrderRowJson> rowsForSale = (from row in body.Rows
-																					 let beerAvailability = availabilities.Find(a => a.BeerId == row.BeerId.ToString())
-																					 where beerAvailability != null && beerAvailability.Availability.Available >= row.Quantity.Value
-																					 select row).ToList();
+			let beerAvailability = availabilities.Find(a => a.BeerId == row.BeerId.ToString())
+			where beerAvailability != null && beerAvailability.Availability.Available >= row.Quantity.Value
+			select row).ToList();
 
 		if (rowsForSale.Count == 0)
 		{
