@@ -24,7 +24,7 @@ public class SalesOrder : EntityBase
 	{ }
 
 	public static SalesOrder CreateSalesOrder(SalesOrderId salesOrderId, SalesOrderNumber salesOrderNumber, CustomerId customerId,
-		CustomerName customerName, OrderDate orderDate, IEnumerable<SalesOrderRowDto> rows) => new(salesOrderId.Value.ToString(),
+		CustomerName customerName, OrderDate orderDate, IEnumerable<SalesOrderRowJson> rows) => new(salesOrderId.Value.ToString(),
 		salesOrderNumber.Value, customerId.Value.ToString(), customerName.Value, orderDate.Value, rows.ToReadModelEntities());
 
 	private SalesOrder(string salesOrderId, string salesOrderNumber, string customerId, string customerName, DateTime orderDate, IEnumerable<SalesOrderRow> rows)

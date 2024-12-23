@@ -10,6 +10,7 @@ namespace BrewUp.Sales.Domain.Entities;
 
 public class SalesOrder : AggregateRoot
 {
+	internal SalesOrderId _salesOrderId;
 	internal SalesOrderNumber _salesOrderNumber;
 	internal OrderDate _orderDate;
 
@@ -23,22 +24,24 @@ public class SalesOrder : AggregateRoot
 	}
 
 	internal static SalesOrder CreateSalesOrder(SalesOrderId salesOrderId, Guid correlationId, SalesOrderNumber salesOrderNumber,
-		OrderDate orderDate, CustomerId customerId, CustomerName customerName, IEnumerable<SalesOrderRowDto> rows)
+		OrderDate orderDate, CustomerId customerId, CustomerName customerName, IEnumerable<SalesOrderRowJson> rows)
 	{
-		// Check SalesOrder invariants
-
-		return new SalesOrder(salesOrderId, correlationId, salesOrderNumber, orderDate, customerId, customerName, rows);
+		return new SalesOrder(salesOrderId, correlationId, salesOrderNumber, orderDate, customerId, customerName,
+			rows);
 	}
 
 	private SalesOrder(SalesOrderId salesOrderId, Guid correlationId, SalesOrderNumber salesOrderNumber, OrderDate orderDate,
-		CustomerId customerId, CustomerName customerName, IEnumerable<SalesOrderRowDto> rows)
-	{		
+		CustomerId customerId, CustomerName customerName, IEnumerable<SalesOrderRowJson> rows)
+	{
+		// Check SalesOrder invariants
 		RaiseEvent(new SalesOrderCreated(salesOrderId, correlationId, salesOrderNumber, orderDate, customerId, customerName, rows));
 	}
 
 	private void Apply(SalesOrderCreated @event)
 	{
 		Id = @event.SalesOrderId;
+
+		_salesOrderId = @event.SalesOrderId;
 		_salesOrderNumber = @event.SalesOrderNumber;
 		_orderDate = @event.OrderDate;
 		_customerId = @event.CustomerId;

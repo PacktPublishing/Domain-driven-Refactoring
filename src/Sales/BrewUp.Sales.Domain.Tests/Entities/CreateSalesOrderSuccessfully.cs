@@ -23,7 +23,7 @@ public sealed class CreateSalesOrderSuccessfully : CommandSpecification<CreateSa
 	private readonly CustomerId _customerId = new(Guid.NewGuid());
 	private readonly CustomerName _customerName = new("Muflone");
 
-	private readonly IEnumerable<SalesOrderRowDto> _rows = Enumerable.Empty<SalesOrderRowDto>();
+	private readonly IEnumerable<SalesOrderRowJson> _rows = Enumerable.Empty<SalesOrderRowJson>();
 
 	protected override IEnumerable<DomainEvent> Given()
 	{

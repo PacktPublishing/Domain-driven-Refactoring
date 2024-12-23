@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace BrewUp.Sales.Facade.Validators;
 
-public class SalesOrderRowValidator : AbstractValidator<SalesOrderRowDto>
+public class SalesOrderRowValidator : AbstractValidator<SalesOrderRowJson>
 {
 	public SalesOrderRowValidator()
 	{

@@ -11,12 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
-    <PackageReference Include="Muflone" Version="8.1.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+    <PackageReference Include="Muflone" Version="8.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\BrewUp.Shared\BrewUp.Shared.csproj" />
+    <ProjectReference Include="..\BrewUp.Shared\BrewUp.Shared.csproj" />
     <ProjectReference Include="..\BrewUp.Warehouses.ReadModel\BrewUp.Warehouses.ReadModel.csproj" />
     <ProjectReference Include="..\BrewUp.Warehouses.SharedKernel\BrewUp.Warehouses.SharedKernel.csproj" />
   </ItemGroup>

@@ -8,7 +8,7 @@ namespace BrewUp.Sales.SharedKernel.Events;
 
 public sealed class SalesOrderCreated(SalesOrderId aggregateId, Guid commitId, SalesOrderNumber salesOrderNumber,
 	OrderDate orderDate, CustomerId customerId, CustomerName customerName,
-	IEnumerable<SalesOrderRowDto> rows) : DomainEvent(aggregateId, commitId)
+	IEnumerable<SalesOrderRowJson> rows) : DomainEvent(aggregateId, commitId)
 {
 	public readonly SalesOrderId SalesOrderId = aggregateId;
 	public readonly SalesOrderNumber SalesOrderNumber = salesOrderNumber;
@@ -17,5 +17,5 @@ public sealed class SalesOrderCreated(SalesOrderId aggregateId, Guid commitId, S
 	public readonly CustomerId CustomerId = customerId;
 	public readonly CustomerName CustomerName = customerName;
 
-	public readonly IEnumerable<SalesOrderRowDto> Rows = rows;
+	public readonly IEnumerable<SalesOrderRowJson> Rows = rows;
 }

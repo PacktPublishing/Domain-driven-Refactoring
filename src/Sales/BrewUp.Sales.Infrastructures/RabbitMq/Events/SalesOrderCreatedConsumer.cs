@@ -14,7 +14,7 @@ public sealed class SalesOrderCreatedConsumer : DomainEventsConsumerBase<SalesOr
 	protected override IEnumerable<IDomainEventHandlerAsync<SalesOrderCreated>> HandlersAsync { get; }
 
 	public SalesOrderCreatedConsumer(ISalesOrderService salesOrderService, IEventBus eventBus,
-		IRabbitMQConnectionFactory connectionFactory, ILoggerFactory loggerFactory) : base(connectionFactory, loggerFactory)
+		IMufloneConnectionFactory connectionFactory, ILoggerFactory loggerFactory) : base(connectionFactory, loggerFactory)
 	{
 		HandlersAsync = new List<DomainEventHandlerAsync<SalesOrderCreated>>
 		{

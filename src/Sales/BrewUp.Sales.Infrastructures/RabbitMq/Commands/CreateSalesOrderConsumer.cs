@@ -9,7 +9,7 @@ using Muflone.Transport.RabbitMQ.Consumers;
 namespace BrewUp.Sales.Infrastructures.RabbitMq.Commands;
 
 public sealed class CreateSalesOrderConsumer(IRepository repository,
-		IRabbitMQConnectionFactory connectionFactory,
+		IMufloneConnectionFactory connectionFactory,
 		ILoggerFactory loggerFactory)
 	: CommandConsumerBase<CreateSalesOrder>(repository, connectionFactory, loggerFactory)
 {

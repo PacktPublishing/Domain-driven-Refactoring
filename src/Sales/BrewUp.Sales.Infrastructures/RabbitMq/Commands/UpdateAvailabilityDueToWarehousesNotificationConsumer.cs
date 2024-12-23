@@ -9,7 +9,7 @@ using Muflone.Transport.RabbitMQ.Consumers;
 namespace BrewUp.Sales.Infrastructures.RabbitMq.Commands;
 
 public class UpdateAvailabilityDueToWarehousesNotificationConsumer(IRepository repository,
-		IRabbitMQConnectionFactory connectionFactory,
+		IMufloneConnectionFactory connectionFactory,
 		ILoggerFactory loggerFactory)
 	: CommandConsumerBase<UpdateAvailabilityDueToWarehousesNotification>(repository, connectionFactory, loggerFactory)
 {

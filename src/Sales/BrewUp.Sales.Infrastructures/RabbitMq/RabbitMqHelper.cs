@@ -1,5 +1,4 @@
-﻿using BrewUp.Infrastructure.RabbitMq;
-using BrewUp.Sales.Infrastructures.RabbitMq.Commands;
+﻿using BrewUp.Sales.Infrastructures.RabbitMq.Commands;
 using BrewUp.Sales.Infrastructures.RabbitMq.Events;
 using BrewUp.Sales.ReadModel.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,8 +22,8 @@ public static class RabbitMqHelper
 		var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
 
 		var rabbitMqConfiguration = new RabbitMQConfiguration(rabbitMqSettings.Host, rabbitMqSettings.Username,
-			rabbitMqSettings.Password, rabbitMqSettings.ExchangeCommandName, rabbitMqSettings.ExchangeEventName, "SalesClient");
-		var mufloneConnectionFactory = new RabbitMQConnectionFactory(rabbitMqConfiguration, loggerFactory);
+			rabbitMqSettings.Password, rabbitMqSettings.ExchangeCommandName, rabbitMqSettings.ExchangeEventName);
+		var mufloneConnectionFactory = new MufloneConnectionFactory(rabbitMqConfiguration, loggerFactory);
 
 		services.AddMufloneTransportRabbitMQ(loggerFactory, rabbitMqConfiguration);
 
@@ -49,6 +48,8 @@ public static class RabbitMqHelper
 								mufloneConnectionFactory,
 												loggerFactory)
 		});
+
+		services.AddMufloneRabbitMQConsumers(consumers);
 
 		return services;
 	}

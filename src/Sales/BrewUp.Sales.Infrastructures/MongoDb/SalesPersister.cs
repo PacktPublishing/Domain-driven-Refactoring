@@ -3,17 +3,18 @@ using BrewUp.Shared.ReadModel;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 
-namespace BrewUp.Sales.Infrastructures.MongoDb;
+namespace BrewUp.Sales.Infrastructures;
 
 public class SalesPersister : IPersister
 {
 	private readonly IMongoDatabase _database;
 	private readonly ILogger _logger;
 
-	public SalesPersister(IMongoClient mongoClient, ILoggerFactory loggerFactory)
+	public SalesPersister(IMongoClient mongoClient,
+		ILoggerFactory loggerFactory)
 	{
-		_database = mongoClient.GetDatabase("Sales");
 		_logger = loggerFactory.CreateLogger(GetType());
+		_database = mongoClient.GetDatabase("Sales");
 	}
 
 	public async Task<T> GetByIdAsync<T>(string id, CancellationToken cancellationToken) where T : EntityBase
@@ -26,12 +27,13 @@ public class SalesPersister : IPersister
 			var collection = _database.GetCollection<T>(typeof(T).Name);
 			var filter = Builders<T>.Filter.Eq("_id", id);
 			return (await collection.CountDocumentsAsync(filter, cancellationToken: cancellationToken) > 0
-				? (await collection.FindAsync(filter, cancellationToken: cancellationToken)).First()
+				? (await collection.FindAsync(filter, cancellationToken: cancellationToken)).First(cancellationToken: cancellationToken)
 				: null)!;
 		}
 		catch (Exception e)
 		{
-			_logger.LogError($"Insert: Error saving DTO: {type}, Message: {e.Message}, StackTrace: {e.StackTrace}");
+			_logger.LogError("Insert: Error saving DTO: {Type}, Message: {EMessage}, StackTrace: {EStackTrace}", type,
+				e.Message, e.StackTrace);
 			throw;
 		}
 	}

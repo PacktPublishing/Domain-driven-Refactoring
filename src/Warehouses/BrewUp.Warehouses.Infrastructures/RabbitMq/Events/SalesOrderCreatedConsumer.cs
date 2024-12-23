@@ -11,7 +11,7 @@ namespace BrewUp.Warehouses.Infrastructures.RabbitMq.Events;
 
 public sealed class AvailabilityUpdatedDueToProductionOrderConsumer(IAvailabilityService availabilityService,
 		IEventBus eventBus,
-		IRabbitMQConnectionFactory connectionFactory, ILoggerFactory loggerFactory)
+		IMufloneConnectionFactory connectionFactory, ILoggerFactory loggerFactory)
 	: DomainEventsConsumerBase<AvailabilityUpdatedDueToProductionOrder>(connectionFactory, loggerFactory)
 {
 	protected override IEnumerable<IDomainEventHandlerAsync<AvailabilityUpdatedDueToProductionOrder>> HandlersAsync { get; } = new List<DomainEventHandlerAsync<AvailabilityUpdatedDueToProductionOrder>>

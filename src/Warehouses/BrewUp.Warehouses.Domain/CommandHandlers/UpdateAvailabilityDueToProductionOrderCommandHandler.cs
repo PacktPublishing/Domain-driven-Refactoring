@@ -16,16 +16,23 @@ public sealed class UpdateAvailabilityDueToProductionOrderCommandHandler : Comma
 	{
 		try
 		{
-			var aggregate = await Repository.GetByIdAsync<Availability>(command.BeerId);
-			aggregate.UpdateAvailability(command.Quantity, command.MessageId);
+			var aggregate = await Repository.GetByIdAsync<Availability>(command.BeerId.Value);
+			if (aggregate == null || aggregate.Id is null)
+			{
+				aggregate = Availability.CreateAvailability(command.BeerId, command.BeerName, command.Quantity, command.MessageId);
+			}
+			else
+			{
+				aggregate.UpdateAvailability(command.Quantity, command.MessageId);
+			}
 
 			await Repository.SaveAsync(aggregate, Guid.NewGuid());
 		}
-		catch
+		catch (Exception e)
 		{
-			// I'm lazy ... I should check the exception type
-			var aggregate = Availability.CreateAvailability(command.BeerId, command.BeerName, command.Quantity, command.MessageId);
-			await Repository.SaveAsync(aggregate, Guid.NewGuid());
+			// I'm lazy ... I should raise an event here
+			Console.WriteLine(e);
+			throw;
 		}
 	}
 }

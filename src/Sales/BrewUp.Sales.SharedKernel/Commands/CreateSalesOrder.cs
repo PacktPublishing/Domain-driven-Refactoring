@@ -8,7 +8,7 @@ namespace BrewUp.Sales.SharedKernel.Commands;
 
 public class CreateSalesOrder(SalesOrderId aggregateId, Guid commitId, SalesOrderNumber salesOrderNumber,
 		OrderDate orderDate, CustomerId customerId, CustomerName customerName,
-		IEnumerable<SalesOrderRowDto> rows)
+		IEnumerable<SalesOrderRowJson> rows)
 	: Command(aggregateId, commitId)
 {
 	public readonly SalesOrderId SalesOrderId = aggregateId;
@@ -18,5 +18,5 @@ public class CreateSalesOrder(SalesOrderId aggregateId, Guid commitId, SalesOrde
 	public readonly CustomerId CustomerId = customerId;
 	public readonly CustomerName CustomerName = customerName;
 
-	public readonly IEnumerable<SalesOrderRowDto> Rows = rows;
+	public readonly IEnumerable<SalesOrderRowJson> Rows = rows;
 }

@@ -5,7 +5,7 @@ namespace BrewUp.Sales.ReadModel.Helpers;
 
 public static class ReadModelHelpers
 {
-	public static IEnumerable<SalesOrderRow> ToReadModelEntities(this IEnumerable<SalesOrderRowDto> dtos)
+	public static IEnumerable<SalesOrderRow> ToReadModelEntities(this IEnumerable<SalesOrderRowJson> dtos)
 	{
 		return dtos.Select(dto =>
 			new SalesOrderRow

@@ -1,16 +1,15 @@
 ﻿using BrewUp.Shared.CustomTypes;
 using BrewUp.Shared.DomainIds;
-using Muflone.Core;
 
 namespace BrewUp.Sales.Domain.Entities;
 
-public class SalesOrderRow : Entity
+public class SalesOrderRow
 {
-	internal BeerId _beerId;
-	internal BeerName _beerName;
+	internal readonly BeerId _beerId;
+	internal readonly BeerName _beerName;
 
-	internal Quantity _quantity;
-	internal Price _beerPrice;
+	internal readonly Quantity _quantity;
+	internal readonly Price _beerPrice;
 
 	protected SalesOrderRow()
 	{
