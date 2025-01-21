@@ -32,15 +32,14 @@ public sealed class SwaggerModule : IModule
 			{
 				option.RouteTemplate = "/swagger/products/{documentName}/swagger.{json|yaml}";
 			});
+			app.UseSwagger(option => { option.RouteTemplate = "documentation/{documentName}/documentation.json"; });
 			app.UseSwaggerUI(x =>
 			{
-				//La versione deve essere identica con quella specificata nel modulo moduels\swagger.cs o da errore con il json
-				x.SwaggerEndpoint("v1.0/swagger.json", "Catalog API v1.0");
-				x.RoutePrefix = "swagger/products";
+				x.SwaggerEndpoint("/documentation/v1/documentation.json", "Intelco API");
+				x.RoutePrefix = "documentation";
 			});
 			app.UseDeveloperExceptionPage();
 		}
 		return app;
 	}
-
 }
