@@ -1,6 +1,7 @@
 ﻿using BrewUp.Infrastructure.MongoDb;
 using Microsoft.Extensions.DependencyInjection;
 using Muflone.Eventstore;
+using Muflone.Eventstore.gRPC;
 using Muflone.Saga.Persistence.MongoDb;
 
 namespace BrewUp.Infrastructure;

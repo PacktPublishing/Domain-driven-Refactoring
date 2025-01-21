@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
-using Muflone.Eventstore.Persistence;
+using Muflone.Eventstore.gRPC.Persistence;
 
 namespace BrewUp.Infrastructure.MongoDb;
 

@@ -1,8 +1,8 @@
 ﻿using BrewUp.Shared.Entities;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
-using Muflone.Eventstore;
-using Muflone.Eventstore.Persistence;
+using Muflone.Eventstore.gRPC;
+using Muflone.Eventstore.gRPC.Persistence;
 
 namespace BrewUp.Infrastructure.MongoDb.Readmodel;
 
@@ -30,7 +30,7 @@ public class EventStorePositionRepository : IEventStorePositionRepository
 			if (result == null)
 			{
 				result = new LastEventPosition
-				{ Id = Constants.LastEventPositionKey, CommitPosition = -1, PreparePosition = -1 };
+				{ Id = Constants.LastEventPositionKey, CommitPosition = 0, PreparePosition = 0 };
 				await collection.InsertOneAsync(result);
 			}
 
