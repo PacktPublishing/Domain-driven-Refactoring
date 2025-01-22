@@ -50,6 +50,8 @@ public static class RabbitMqHelper
 												loggerFactory)
 		});
 
+		services.AddMufloneRabbitMQConsumers(consumers);
+
 		return services;
 	}
 }

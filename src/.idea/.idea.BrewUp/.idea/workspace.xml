@@ -9,7 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffdcb491-073e-4f57-804f-90c7cf534f3a" name="Changes" comment="" />
+    <list default="true" id="ffdcb491-073e-4f57-804f-90c7cf534f3a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain.Tests/Entities/FinalPriceUpdatedSuccessfully.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/CommandHandlers/UpdateFinalPriceCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.SharedKernel/Commands/UpdateFinalPrice.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.SharedKernel/Events/FinalPriceUpdated.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BrewUp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BrewUp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BrewUp.Shared/CustomTypes/Price.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BrewUp.Shared/CustomTypes/Price.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/CommandHandlers/CreateSalesOrderCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/CommandHandlers/CreateSalesOrderCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/CommandHandlers/UpdateAvailabilityDueToWarehousesNotificationCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/CommandHandlers/UpdateAvailabilityDueToWarehousesNotificationCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/Entities/SalesOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/Entities/SalesOrder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sales/BrewUp.Sales.Infrastructures/RabbitMq/RabbitMqHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.Infrastructures/RabbitMq/RabbitMqHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sales/BrewUp.Sales.SharedKernel/BrewUp.Sales.SharedKernel.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.SharedKernel/BrewUp.Sales.SharedKernel.csproj" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,8 +51,16 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0cb798dced524c7cbf9b3f5e6055c0767e00/5c/cd45b5d2/AggregateRoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0cb798dced524c7cbf9b3f5e6055c0767e00/72/344a97e3/IRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0cb798dced524c7cbf9b3f5e6055c0767e00/bf/5d60291e/ConventionEventRouter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2f5d8b1fcc9d40cfb15dfa4cd7b9c31c5c00/23/22c766bb/EventStoreRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7ee1d30bfcfa4db18e4ccd9b5cca1a243a00/34/8f034b11/CommandSpecification`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7ee1d30bfcfa4db18e4ccd9b5cca1a243a00/9c/3abcf338/InMemoryEventRepository.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c002a23d5dfc4d449ab9e74a874a8b1a2ac00/46/2e43f25c/EventStoreClientSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/92915fc433708d54b82f7e51aa6c115b21ca2f9695264db0585bf5cd6e9e1959/Results.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a42ba4db448ed38dcb9fb39194c637a317a8281856b88e139e8a905ee6d12b/Guid.Windows.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d882146b4f265f10bcbec2663fce248db9ffec5fa1aeaf76e32a11ba5eafcd6/MethodBaseInvoker.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -56,6 +76,8 @@
     ".NET Launch Settings Profile.BrewUp.Rest: IIS Express.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "b6f3b1ce-dcfe-4351-8583-df3e0dd17e03.executor": "Debug",
+    "git-widget-placeholder": "03-monolith__with__cqrs__and__event__sourcing",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -124,7 +146,8 @@
       <workItem from="1736784682634" duration="2483000" />
       <workItem from="1736850284918" duration="986000" />
       <workItem from="1737457482270" duration="10108000" />
-      <workItem from="1737484062488" duration="1000000" />
+      <workItem from="1737484062488" duration="1136000" />
+      <workItem from="1737532356787" duration="14470000" />
     </task>
     <servers />
   </component>
@@ -135,5 +158,102 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/Entities/SalesOrder.cs</url>
+          <line>40</line>
+          <properties documentPath="C:\Sviluppo\Ace68\Domain-driven-Refactoring\src\Sales\BrewUp.Sales.Domain\Entities\SalesOrder.cs" containingFunctionPresentation="Method 'Apply'">
+            <startOffsets>
+              <option value="1337" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1362" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Sales/BrewUp.Sales.ReadModel/EventHandlers/SalesOrderCreatedEventHandlerAsync.cs</url>
+          <line>14</line>
+          <properties documentPath="C:\Sviluppo\Ace68\Domain-driven-Refactoring\src\Sales\BrewUp.Sales.ReadModel\EventHandlers\SalesOrderCreatedEventHandlerAsync.cs" containingFunctionPresentation="Method 'HandleAsync'">
+            <startOffsets>
+              <option value="509" />
+            </startOffsets>
+            <endOffsets>
+              <option value="695" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/CommandHandlers/CreateSalesOrderCommandHandler.cs</url>
+          <line>15</line>
+          <properties documentPath="C:\Sviluppo\Ace68\Domain-driven-Refactoring\src\Sales\BrewUp.Sales.Domain\CommandHandlers\CreateSalesOrderCommandHandler.cs" containingFunctionPresentation="Method 'HandleAsync'">
+            <startOffsets>
+              <option value="708" />
+            </startOffsets>
+            <endOffsets>
+              <option value="781" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BrewUp.Infrastructure/InfrastructureHelper.cs</url>
+          <line>16</line>
+          <properties documentPath="C:\Sviluppo\Ace68\Domain-driven-Refactoring\src\BrewUp.Infrastructure\InfrastructureHelper.cs" containingFunctionPresentation="Method 'AddInfrastructure'">
+            <startOffsets>
+              <option value="608" />
+            </startOffsets>
+            <endOffsets>
+              <option value="675" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/Entities/SalesOrder.cs</url>
+          <line>35</line>
+          <properties documentPath="C:\Sviluppo\Ace68\Domain-driven-Refactoring\src\Sales\BrewUp.Sales.Domain\Entities\SalesOrder.cs" containingFunctionPresentation="Constructor 'SalesOrder'">
+            <startOffsets>
+              <option value="1157" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1281" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/Entities/SalesOrder.cs</url>
+          <line>51</line>
+          <properties documentPath="C:\Sviluppo\Ace68\Domain-driven-Refactoring\src\Sales\BrewUp.Sales.Domain\Entities\SalesOrder.cs" containingFunctionPresentation="Method 'UpdateFinalPrice'">
+            <startOffsets>
+              <option value="1685" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1787" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/CommandHandlers/UpdateFinalPriceCommandHandler.cs</url>
+          <line>17</line>
+          <properties documentPath="C:\Sviluppo\Ace68\Domain-driven-Refactoring\src\Sales\BrewUp.Sales.Domain\CommandHandlers\UpdateFinalPriceCommandHandler.cs" containingFunctionPresentation="Method 'HandleAsync'">
+            <startOffsets>
+              <option value="599" />
+            </startOffsets>
+            <endOffsets>
+              <option value="698" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
