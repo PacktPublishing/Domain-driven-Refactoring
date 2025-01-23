@@ -45,10 +45,4 @@ public class SalesOrder : AggregateRoot
 		_customerName = @event.CustomerName;
 		_rows = @event.Rows.MapToDomainRows();
 	}
-
-	public void UpdateFinalPrice(Price commandPrice, Guid correlationId)
-	{
-		// Controllo invvarianti e regole di business
-		RaiseEvent(new FinalPriceUpdated(new SalesOrderId(new Guid(Id.Value)), correlationId, commandPrice ));
-	}
 }

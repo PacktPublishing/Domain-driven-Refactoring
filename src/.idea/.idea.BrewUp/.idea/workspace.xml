@@ -10,17 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffdcb491-073e-4f57-804f-90c7cf534f3a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain.Tests/Entities/FinalPriceUpdatedSuccessfully.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/CommandHandlers/UpdateFinalPriceCommandHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.SharedKernel/Commands/UpdateFinalPrice.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.SharedKernel/Events/FinalPriceUpdated.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BrewUp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BrewUp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BrewUp.Shared/CustomTypes/Price.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BrewUp.Shared/CustomTypes/Price.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/CommandHandlers/CreateSalesOrderCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/CommandHandlers/CreateSalesOrderCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/CommandHandlers/UpdateAvailabilityDueToWarehousesNotificationCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/CommandHandlers/UpdateAvailabilityDueToWarehousesNotificationCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/Entities/SalesOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/Entities/SalesOrder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sales/BrewUp.Sales.Infrastructures/RabbitMq/RabbitMqHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.Infrastructures/RabbitMq/RabbitMqHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sales/BrewUp.Sales.SharedKernel/BrewUp.Sales.SharedKernel.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.SharedKernel/BrewUp.Sales.SharedKernel.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BrewUp.Rest/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/BrewUp.Rest/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/CommandHandlers/UpdateFinalPriceCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/CommandHandlers/UpdateFinalPriceCommandHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,22 +63,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.BrewUp.Rest: IIS Express.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "b6f3b1ce-dcfe-4351-8583-df3e0dd17e03.executor": "Debug",
-    "git-widget-placeholder": "03-monolith__with__cqrs__and__event__sourcing",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.BrewUp.Rest: IIS Express.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;b6f3b1ce-dcfe-4351-8583-df3e0dd17e03.executor&quot;: &quot;Debug&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;03-monolith__with__cqrs__and__event__sourcing&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.BrewUp.Rest: IIS Express">
     <configuration name="BrewUp.Rest: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BrewUp.Rest/BrewUp.Rest.csproj" />
@@ -147,7 +139,8 @@
       <workItem from="1736850284918" duration="986000" />
       <workItem from="1737457482270" duration="10108000" />
       <workItem from="1737484062488" duration="1136000" />
-      <workItem from="1737532356787" duration="14470000" />
+      <workItem from="1737532356787" duration="15539000" />
+      <workItem from="1737633054987" duration="107000" />
     </task>
     <servers />
   </component>
@@ -242,13 +235,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Sales/BrewUp.Sales.Domain/CommandHandlers/UpdateFinalPriceCommandHandler.cs</url>
-          <line>17</line>
+          <line>19</line>
           <properties documentPath="C:\Sviluppo\Ace68\Domain-driven-Refactoring\src\Sales\BrewUp.Sales.Domain\CommandHandlers\UpdateFinalPriceCommandHandler.cs" containingFunctionPresentation="Method 'HandleAsync'">
             <startOffsets>
-              <option value="599" />
+              <option value="672" />
             </startOffsets>
             <endOffsets>
-              <option value="698" />
+              <option value="771" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="11" />
