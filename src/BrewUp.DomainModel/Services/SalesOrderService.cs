@@ -15,7 +15,8 @@ public sealed class SalesOrderService(
 		List<SalesOrderRowJson> beersAvailable = new();
 		foreach (var row in rows)
 		{
-			var availability = await warehouseRepository.GetByIdAsync<Entities.Warehouses.Availability>(row.BeerId.ToString(), cancellationToken);
+			//var availability = await warehouseRepository.GetByIdAsync<Entities.Warehouses.Availability>(row.BeerId.ToString(), cancellationToken);
+			var availability = await warehouseRepository.GetByIdAsync<Shared.Entities.Availability>(row.BeerId.ToString(), cancellationToken);
 			if (availability!=null)
 				beersAvailable.Add(row);
 		}

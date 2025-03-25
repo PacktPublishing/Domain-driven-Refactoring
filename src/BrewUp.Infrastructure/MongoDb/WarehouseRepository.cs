@@ -26,13 +26,11 @@ public class WarehouseRepository : IRepository
 		{
 			var collection = _database.GetCollection<T>(typeof(T).Name);
 			var filter = Builders<T>.Filter.Eq("_id", id);
-			return (await collection.CountDocumentsAsync(filter, cancellationToken: cancellationToken) > 0
-				? (await collection.FindAsync(filter, cancellationToken: cancellationToken)).First(cancellationToken: cancellationToken)
-				: null)!;
+			return (await collection.FindAsync(filter, cancellationToken: cancellationToken)).FirstOrDefault(cancellationToken: cancellationToken);
 		}
 		catch (Exception e)
 		{
-			_logger.LogError("Insert: Error saving DTO: {Type}, Message: {EMessage}, StackTrace: {EStackTrace}", type,
+			_logger.LogError("GetById: Error reading DTO: {Type}, Message: {EMessage}, StackTrace: {EStackTrace}", type,
 				e.Message, e.StackTrace);
 			throw;
 		}
