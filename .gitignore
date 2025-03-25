@@ -416,6 +416,7 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+.idea/
 
 # CodeRush
 .cr/
