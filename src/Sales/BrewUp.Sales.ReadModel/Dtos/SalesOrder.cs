@@ -15,6 +15,7 @@ public class SalesOrder : EntityBase
 	public string CustomerName { get; private set; } = string.Empty;
 
 	public DateTime OrderDate { get; private set; } = DateTime.MinValue;
+	public DateTime DeliveryDate { get; private set; } = DateTime.MinValue;
 
 	public IEnumerable<SalesOrderRow> Rows { get; private set; } = Enumerable.Empty<SalesOrderRow>();
 
