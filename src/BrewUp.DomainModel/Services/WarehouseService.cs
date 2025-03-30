@@ -9,6 +9,6 @@ public sealed class WarehouseService([FromKeyedServices("warehouse")] IRepositor
 		CancellationToken cancellationToken)
 	{
 		var aggregate = Entities.Warehouses.Availability.CreateAvailability(beerId, beerName, quantity);
-		await repository.InsertAsync(aggregate.MapToReadModel(), cancellationToken);
+		await repository.InsertAsync(aggregate.MapToSharedDto(), cancellationToken);
 	}
 }

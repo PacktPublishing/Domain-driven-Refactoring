@@ -23,6 +23,6 @@ public sealed class SalesOrderService(
 
 		var aggregate = SalesOrder.CreateSalesOrder(salesOrderId, salesOrderNumber, orderDate, customerId, customerName, beersAvailable);
 
-		await saleRepository.InsertAsync(aggregate.MapToReadModel(), cancellationToken);
+		await saleRepository.InsertAsync(aggregate.MapToSharedDto(), cancellationToken);
 	}
 }
