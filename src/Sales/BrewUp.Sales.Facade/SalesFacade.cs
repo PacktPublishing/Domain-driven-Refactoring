@@ -7,16 +7,36 @@ using BrewUp.Shared.DomainIds;
 using BrewUp.Shared.Entities;
 using BrewUp.Shared.ReadModel;
 using Muflone.Persistence;
+using Availability = BrewUp.Sales.ReadModel.Dtos.Availability;
 
 namespace BrewUp.Sales.Facade;
 
 public sealed class SalesFacade(IServiceBus serviceBus,
-	IQueries<SalesOrder> orderQueries) : ISalesFacade
+	IQueries<SalesOrder> orderQueries, IQueries<Availability> availabilityQueries) : ISalesFacade
 {
 	public async Task<string> CreateOrderAsync(SalesOrderJson body, CancellationToken cancellationToken)
 	{
 		if (body.SalesOrderId.Equals(string.Empty))
 			body = body with { SalesOrderId = Guid.NewGuid().ToString() };
+
+		System.Collections.Generic.IEnumerable<SalesOrderRowDto> beersAvailable = [];
+		foreach (var row in body.Rows)
+		{
+			var availability = await availabilityQueries.GetByIdAsync(row.BeerId.ToString(), cancellationToken);
+			if (availability.Quantity.Value.Equals(row.Quantity.Value))
+			{
+				beersAvailable = beersAvailable.Append(new SalesOrderRowDto
+				{
+					BeerId = row.BeerId,
+					BeerName = row.BeerName,
+					Price = row.Price,
+					Quantity = availability.Quantity
+				});
+			}
+		}
+		
+		if (beersAvailable.Count() != body.Rows.Count())
+			throw new InvalidOperationException("Not all beers are available");
 
 		CreateSalesOrder command = new(new SalesOrderId(new Guid(body.SalesOrderId)),
 						Guid.NewGuid(), new SalesOrderNumber(body.SalesOrderNumber), new OrderDate(body.OrderDate),
