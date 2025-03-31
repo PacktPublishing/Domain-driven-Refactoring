@@ -14,6 +14,6 @@ public sealed class SalesDomainService([FromKeyedServices("sales")] IRepository 
 	{
 		var aggregate = SalesOrder.CreateSalesOrder(salesOrderId, salesOrderNumber, orderDate, customerId, customerName, rows);
 
-		await repository.InsertAsync(aggregate, cancellationToken);
+		await repository.InsertAsync(aggregate.MapToSharedDto(), cancellationToken);
 	}
 }

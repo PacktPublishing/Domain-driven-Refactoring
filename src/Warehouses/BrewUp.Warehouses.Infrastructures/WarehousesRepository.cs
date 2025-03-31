@@ -31,7 +31,7 @@ public class WarehousesRepository : IRepository
 		}
 		catch (Exception e)
 		{
-			_logger.LogError("Insert: Error saving DTO: {Type}, Message: {EMessage}, StackTrace: {EStackTrace}", type,
+			_logger.LogError("GetById: Error reading DTO: {Type}, Message: {EMessage}, StackTrace: {EStackTrace}", type,
 				e.Message, e.StackTrace);
 			throw;
 		}
@@ -39,7 +39,7 @@ public class WarehousesRepository : IRepository
 
 	public async Task InsertAsync<T>(T entity, CancellationToken cancellationToken) where T : EntityBase
 	{
-		cancellationToken.ThrowIfCancellationRequested();
+		cancellationToken.ThrowIfCancellationRequested();		
 
 		var type = typeof(T).Name;
 		try

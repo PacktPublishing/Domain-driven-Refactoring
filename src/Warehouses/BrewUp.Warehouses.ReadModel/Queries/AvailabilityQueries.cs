@@ -1,6 +1,6 @@
 ﻿using BrewUp.Shared.DomainModel;
 using BrewUp.Shared.ReadModel;
-using BrewUp.Warehouses.ReadModel.Dtos;
+using BrewUp.Warehouses.SharedKernel.Entities;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 using System.Linq.Expressions;
@@ -9,7 +9,7 @@ namespace BrewUp.Warehouses.ReadModel.Queries;
 
 public sealed class AvailabilityQueries(IMongoClient mongoClient) : IQueries<Availability>
 {
-	private readonly IMongoDatabase _database = mongoClient.GetDatabase("Sales");
+	private readonly IMongoDatabase _database = mongoClient.GetDatabase("Warehouses");
 
 	public async Task<Availability> GetByIdAsync(string id, CancellationToken cancellationToken)
 	{

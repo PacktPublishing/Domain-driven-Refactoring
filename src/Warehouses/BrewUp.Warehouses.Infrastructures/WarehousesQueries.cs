@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace BrewUp.Warehouses.Infrastructures;
 
-public abstract class WarehousesQueries<T> : IQueries<T> where T : DtoBase
+public abstract class WarehousesQueries<T> : IQueries<T> where T : EntityBase
 {
 	protected readonly IMongoClient MongoClient;
 	protected IMongoDatabase Database;

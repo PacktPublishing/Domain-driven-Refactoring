@@ -16,7 +16,7 @@ public static class WarehousesEndpoints
 
 		group.MapPost("/availabilities", HandleSetAvailabilities)
 			.Produces(StatusCodes.Status400BadRequest)
-			.Produces(StatusCodes.Status200OK)
+			.Produces(StatusCodes.Status201Created)
 			.WithName("SetAvailabilities");
 
 		return app;
@@ -31,6 +31,6 @@ public static class WarehousesEndpoints
 	{
 		await warehousesFacade.SetAvailabilityAsync(body, cancellationToken);
 
-		return Results.Ok();
+		return Results.Created();
 	}
 }

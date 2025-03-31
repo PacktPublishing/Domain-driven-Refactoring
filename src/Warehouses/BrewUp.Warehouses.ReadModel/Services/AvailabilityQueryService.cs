@@ -1,7 +1,7 @@
 ﻿using BrewUp.Shared.Contracts;
 using BrewUp.Shared.DomainModel;
 using BrewUp.Shared.ReadModel;
-using BrewUp.Warehouses.ReadModel.Dtos;
+using BrewUp.Warehouses.SharedKernel.Entities;
 using Microsoft.Extensions.Logging;
 
 namespace BrewUp.Warehouses.ReadModel.Services;
@@ -12,10 +12,10 @@ public sealed class AvailabilityQueryService(ILoggerFactory loggerFactory, IQuer
 	{
 		try
 		{
-			var availability = await queries.GetByFilterAsync(a => a.BeerId.Equals(beerId.ToString()), 0, 20, cancellationToken);
-			return availability.TotalRecords > 0
-				? new PagedResult<BeerAvailabilityJson>(availability.Results.Select(r => r.ToJson()), availability.Page, availability.PageSize, availability.TotalRecords)
-				: new PagedResult<BeerAvailabilityJson>(Enumerable.Empty<BeerAvailabilityJson>(), 0, 0, 0);
+			var availability = await queries.GetByIdAsync(beerId.ToString(), cancellationToken);
+			if (availability == null)			
+				return new PagedResult<BeerAvailabilityJson>(Enumerable.Empty<BeerAvailabilityJson>(), 0, 0, 0);
+			return new PagedResult<BeerAvailabilityJson>(new[] { availability.ToJson() }, 0, 1, 1);
 		}
 		catch (Exception e)
 		{

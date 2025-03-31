@@ -2,7 +2,7 @@
 using BrewUp.Shared.Contracts;
 using BrewUp.Shared.CustomTypes;
 
-namespace BrewUp.Sales.Domain.Helper;
+namespace BrewUp.Sales.Domain;
 
 public static class DomainHelper
 {
@@ -16,11 +16,11 @@ public static class DomainHelper
 		return json.Select(r => SalesOrderRow.CreateSalesOrderRow(new BeerId(r.BeerId), new BeerName(r.BeerName), r.Quantity, r.Price));
 	}
 
-	internal static ReadModel.Dtos.SalesOrder MapToReadModel(this SalesOrder salesOrder)
+	internal static SharedKernel.Entities.SalesOrder MapToSharedDto(this SalesOrder salesOrder)
 	{
-		return ReadModel.Dtos.SalesOrder.Create(salesOrder._salesOrderId, salesOrder._salesOrderNumber,
+		return SharedKernel.Entities.SalesOrder.Create(salesOrder._salesOrderId, salesOrder._salesOrderNumber,
 						salesOrder._orderDate, salesOrder._customerId, salesOrder._customerName,
-									salesOrder._rows.Select(r => new ReadModel.Dtos.SalesOrderRow
+									salesOrder._rows.Select(r => new SharedKernel.Entities.SalesOrderRow
 									{
 										BeerId = r._beerId.Value,
 										BeerName = r._beerName.Value,

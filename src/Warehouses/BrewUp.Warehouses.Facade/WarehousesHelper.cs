@@ -2,9 +2,9 @@
 using BrewUp.Warehouses.Domain;
 using BrewUp.Warehouses.Facade.Validators;
 using BrewUp.Warehouses.Infrastructures;
-using BrewUp.Warehouses.ReadModel.Dtos;
 using BrewUp.Warehouses.ReadModel.Queries;
 using BrewUp.Warehouses.ReadModel.Services;
+using BrewUp.Warehouses.SharedKernel.Entities;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;

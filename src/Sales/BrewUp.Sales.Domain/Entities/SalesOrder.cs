@@ -1,5 +1,4 @@
-﻿using BrewUp.Sales.Domain.Helper;
-using BrewUp.Sales.SharedKernel.CustomTypes;
+﻿using BrewUp.Sales.SharedKernel.CustomTypes;
 using BrewUp.Shared.Contracts;
 using BrewUp.Shared.CustomTypes;
 using BrewUp.Shared.DomainModel;

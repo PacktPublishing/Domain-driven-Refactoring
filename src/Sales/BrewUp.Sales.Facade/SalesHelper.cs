@@ -1,8 +1,8 @@
 ﻿using BrewUp.Sales.Domain;
 using BrewUp.Sales.Infrastructures;
-using BrewUp.Sales.ReadModel.Dtos;
 using BrewUp.Sales.ReadModel.Queries;
 using BrewUp.Sales.ReadModel.Services;
+using BrewUp.Sales.SharedKernel.Entities;
 using BrewUp.Shared.ReadModel;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
