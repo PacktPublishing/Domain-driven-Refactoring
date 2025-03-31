@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace BrewUp.DomainModel.Services;
 
 public sealed class SalesOrderService(
-	[FromKeyedServices("sale")] IRepository saleRepository, 
+	[FromKeyedServices("sale")] IRepository saleRepository,
 	[FromKeyedServices("warehouse")] IRepository warehouseRepository) : ISalesOrderService
 {
 	public async Task CreateSalesOrderAsync(SalesOrderId salesOrderId, SalesOrderNumber salesOrderNumber, OrderDate orderDate,
@@ -15,9 +15,8 @@ public sealed class SalesOrderService(
 		List<SalesOrderRowJson> beersAvailable = new();
 		foreach (var row in rows)
 		{
-			//var availability = await warehouseRepository.GetByIdAsync<Entities.Warehouses.Availability>(row.BeerId.ToString(), cancellationToken);
 			var availability = await warehouseRepository.GetByIdAsync<Shared.Entities.Availability>(row.BeerId.ToString(), cancellationToken);
-			if (availability!=null)
+			if (availability != null)
 				beersAvailable.Add(row);
 		}
 
