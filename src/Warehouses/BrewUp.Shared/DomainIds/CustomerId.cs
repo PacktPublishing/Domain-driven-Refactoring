@@ -4,7 +4,7 @@ namespace BrewUp.Shared.DomainIds;
 
 public sealed class CustomerId : DomainId
 {
-	public CustomerId(Guid value) : base(value)
-	{
-	}
+  public CustomerId(Guid value) : base(value.ToString())
+  {
+  }
 }

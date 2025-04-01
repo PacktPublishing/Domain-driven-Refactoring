@@ -5,16 +5,15 @@ using Muflone.Persistence;
 
 namespace BrewUp.Warehouses.Domain.CommandHandlers;
 
-public sealed class UpdateAvailabilityDueToProductionOrderCommandHandler(
+public sealed class CreateAvailabilityDueToProductionOrderCommandHandler(
   IRepository repository, ILoggerFactory loggerFactory)
-  : CommandHandlerBaseAsync<UpdateAvailabilityDueToProductionOrder>(repository, loggerFactory)
+  : CommandHandlerBaseAsync<CreateAvailabilityDueToProductionOrder>(repository, loggerFactory)
 {
-  public override async Task ProcessCommand(UpdateAvailabilityDueToProductionOrder command, CancellationToken cancellationToken = default)
+  public override async Task ProcessCommand(CreateAvailabilityDueToProductionOrder command, CancellationToken cancellationToken = default)
   {
     try
     {
-      var aggregate = await Repository.GetByIdAsync<Availability>(command.BeerId, cancellationToken);
-      aggregate!.UpdateAvailability(command.Quantity, command.MessageId);
+      var aggregate = Availability.CreateAvailability(command.BeerId, command.BeerName, command.Quantity, command.MessageId);
 
       await Repository.SaveAsync(aggregate, Guid.NewGuid(), cancellationToken);
     }
