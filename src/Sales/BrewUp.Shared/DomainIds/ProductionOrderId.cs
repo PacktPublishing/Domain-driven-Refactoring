@@ -4,7 +4,7 @@ namespace BrewUp.Shared.DomainIds;
 
 public sealed class ProductionOrderId : DomainId
 {
-    public ProductionOrderId(Guid value) : base(value)
-    {
-    }
+  public ProductionOrderId(Guid value) : base(value.ToString())
+  {
+  }
 }

@@ -11,14 +11,14 @@ namespace BrewUp.Sales.Infrastructures.RabbitMq.Events;
 
 public sealed class SalesOrderCreatedConsumer : DomainEventsConsumerBase<SalesOrderCreated>
 {
-	protected override IEnumerable<IDomainEventHandlerAsync<SalesOrderCreated>> HandlersAsync { get; }
+  protected override IEnumerable<IDomainEventHandlerAsync<SalesOrderCreated>> HandlersAsync { get; }
 
-	public SalesOrderCreatedConsumer(ISalesOrderService salesOrderService, IEventBus eventBus,
-		IMufloneConnectionFactory connectionFactory, ILoggerFactory loggerFactory) : base(connectionFactory, loggerFactory)
-	{
-		HandlersAsync = new List<DomainEventHandlerAsync<SalesOrderCreated>>
-		{
-			new SalesOrderCreatedEventHandlerAsync(loggerFactory, salesOrderService)
-		};
-	}
+  public SalesOrderCreatedConsumer(ISalesOrderService salesOrderService, IEventBus eventBus,
+    IRabbitMQConnectionFactory connectionFactory, ILoggerFactory loggerFactory) : base(connectionFactory, loggerFactory)
+  {
+    HandlersAsync = new List<DomainEventHandlerAsync<SalesOrderCreated>>
+    {
+      new SalesOrderCreatedEventHandlerAsync(loggerFactory, salesOrderService)
+    };
+  }
 }

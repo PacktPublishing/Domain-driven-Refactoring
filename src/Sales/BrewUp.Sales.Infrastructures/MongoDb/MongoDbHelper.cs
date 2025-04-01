@@ -3,22 +3,22 @@ using BrewUp.Shared.ReadModel;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
-using Muflone.Eventstore.Persistence;
+using Muflone.Eventstore.gRPC.Persistence;
 
 namespace BrewUp.Sales.Infrastructures.MongoDb;
 
 public static class MongoDbHelper
 {
-	public static IServiceCollection AddSalesMongoDb(this IServiceCollection services,
-		MongoDbSettings mongoDbSettings)
-	{
-		services.AddSingleton<IMongoClient>(new MongoClient(mongoDbSettings.ConnectionString));
+  public static IServiceCollection AddSalesMongoDb(this IServiceCollection services,
+    MongoDbSettings mongoDbSettings)
+  {
+    services.AddSingleton<IMongoClient>(new MongoClient(mongoDbSettings.ConnectionString));
 
-		services.AddSingleton<IEventStorePositionRepository>(x =>
-			new EventStorePositionRepository(x.GetRequiredService<ILogger<EventStorePositionRepository>>(), mongoDbSettings));
+    services.AddSingleton<IEventStorePositionRepository>(x =>
+      new EventStorePositionRepository(x.GetRequiredService<ILogger<EventStorePositionRepository>>(), mongoDbSettings));
 
-		services.AddKeyedScoped<IPersister, SalesPersister>("sales");
+    services.AddKeyedScoped<IPersister, SalesPersister>("sales");
 
-		return services;
-	}
+    return services;
+  }
 }

@@ -9,9 +9,9 @@ using Muflone.Transport.RabbitMQ.Consumers;
 namespace BrewUp.Sales.Infrastructures.RabbitMq.Commands;
 
 public class UpdateAvailabilityDueToWarehousesNotificationConsumer(IRepository repository,
-		IMufloneConnectionFactory connectionFactory,
-		ILoggerFactory loggerFactory)
-	: CommandConsumerBase<UpdateAvailabilityDueToWarehousesNotification>(repository, connectionFactory, loggerFactory)
+    IRabbitMQConnectionFactory connectionFactory,
+    ILoggerFactory loggerFactory)
+  : CommandConsumerBase<UpdateAvailabilityDueToWarehousesNotification>(repository, connectionFactory, loggerFactory)
 {
-	protected override ICommandHandlerAsync<UpdateAvailabilityDueToWarehousesNotification> HandlerAsync { get; } = new UpdateAvailabilityDueToWarehousesNotificationCommandHandler(repository, loggerFactory);
+  protected override ICommandHandlerAsync<UpdateAvailabilityDueToWarehousesNotification> HandlerAsync { get; } = new UpdateAvailabilityDueToWarehousesNotificationCommandHandler(repository, loggerFactory);
 }

@@ -9,11 +9,11 @@ using Muflone.Transport.RabbitMQ.Consumers;
 namespace BrewUp.Sales.Infrastructures.RabbitMq.Events;
 
 public sealed class AvailabilityUpdatedForNotificationConsumer(IServiceBus serviceBus,
-		IMufloneConnectionFactory mufloneConnectionFactory, ILoggerFactory loggerFactory)
-	: IntegrationEventsConsumerBase<AvailabilityUpdatedForNotification>(mufloneConnectionFactory, loggerFactory)
+    IRabbitMQConnectionFactory mufloneConnectionFactory, ILoggerFactory loggerFactory)
+  : IntegrationEventsConsumerBase<AvailabilityUpdatedForNotification>(mufloneConnectionFactory, loggerFactory)
 {
-	protected override IEnumerable<IIntegrationEventHandlerAsync<AvailabilityUpdatedForNotification>> HandlersAsync { get; } = new List<IIntegrationEventHandlerAsync<AvailabilityUpdatedForNotification>>
-	{
-		new AvailabilityUpdatedForNotificationEventHandler(loggerFactory, serviceBus)
-	};
+  protected override IEnumerable<IIntegrationEventHandlerAsync<AvailabilityUpdatedForNotification>> HandlersAsync { get; } = new List<IIntegrationEventHandlerAsync<AvailabilityUpdatedForNotification>>
+  {
+    new AvailabilityUpdatedForNotificationEventHandler(loggerFactory, serviceBus)
+  };
 }
