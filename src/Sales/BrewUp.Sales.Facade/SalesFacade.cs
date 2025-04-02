@@ -19,11 +19,11 @@ public sealed class SalesFacade(IServiceBus serviceBus,
 		if (body.SalesOrderId.Equals(string.Empty))
 			body = body with { SalesOrderId = Guid.NewGuid().ToString() };
 
-		System.Collections.Generic.IEnumerable<SalesOrderRowDto> beersAvailable = [];
+		IEnumerable<SalesOrderRowDto> beersAvailable = [];
 		foreach (var row in body.Rows)
 		{
 			var availability = await availabilityQueries.GetByIdAsync(row.BeerId.ToString(), cancellationToken);
-			if (availability.Quantity.Value.Equals(row.Quantity.Value))
+			if (availability.Quantity.Value >= row.Quantity.Value)
 			{
 				beersAvailable = beersAvailable.Append(new SalesOrderRowDto
 				{
